@@ -12,7 +12,9 @@ import BlogSection from "./components/BlogSection";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import WebsiteDesign from "./components/Pages/WebsiteDesign";
-// (Later you can add more pages like AdvancedSEO, LogoDesign, etc.)
+import AdvancedSEO from "./components/Pages/AdvancedSEO";
+import LogoDesign from "./components/Pages/LogoDesign";
+import PostDesign from "./components/Pages/PostDesign";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -38,6 +40,9 @@ function App() {
 
         {/* ✅ Service page must match Navbar link */}
         <Route path="/services/website-design" element={<WebsiteDesign />} />
+        <Route path="/services/advanced-seo" element={<AdvancedSEO />} />
+        <Route path="/services/logo-design" element={<LogoDesign />} />
+        <Route path="/services/post-design" element={<PostDesign />} />
       </Routes>
 
       <Footer />

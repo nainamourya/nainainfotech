@@ -29,6 +29,7 @@ export default function WebsiteDesign() {
           end: "+=200%", // 3 sections → 2 extra screens
           scrub: 1.2,
           pin: true, // ✅ pin whole section
+          pinSpacing: true,
           anticipatePin: 1,
           // markers: true, // 👈 enable to debug
         },
