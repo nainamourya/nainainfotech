@@ -64,8 +64,11 @@ export default function Footer() {
         {/* Brand */}
         <div className="footer-item space-y-4">
           <div className="flex items-center gap-2 text-white text-2xl font-bold">
-            <Sparkles className="text-indigo-400" />
-            MindCraft
+            <img
+              src="img/footer-logo.png"
+              alt="nainainfotech Logo"
+              className="h-10 w-auto object-contain"
+            />
           </div>
           <p className="text-sm leading-relaxed text-gray-400">
             Crafting calm, clarity, and conscious growth through modern therapy
@@ -101,11 +104,11 @@ export default function Footer() {
           <h4 className="text-white font-semibold">Contact</h4>
           <div className="flex items-center gap-3 text-sm">
             <Mail className="w-4 h-4 text-indigo-400" />
-            support@mindcraft.com
+            nainam6025@gmail.com
           </div>
           <div className="flex items-center gap-3 text-sm">
             <Phone className="w-4 h-4 text-indigo-400" />
-            +91 98765 43210
+            +91 7977342732
           </div>
           <div className="flex items-center gap-3 text-sm">
             <MapPin className="w-4 h-4 text-indigo-400" />
@@ -116,7 +119,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="relative border-t border-white/10 py-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} MindCraft. All rights reserved.
+        © {new Date().getFullYear()} nainainfotech. All rights reserved.
       </div>
     </footer>
   );

@@ -8,7 +8,7 @@ import AboutUs from "./components/AboutUs";
 import Services from "./components/Services";
 import CTASection from "./components/CTASection";
 import BlogSection from "./components/BlogSection";
-
+import About from "./components/Pages/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import WebsiteDesign from "./components/Pages/WebsiteDesign";
@@ -38,13 +38,15 @@ function App() {
           }
         />
 
-        {/* ✅ Service page must match Navbar link */}
+        {/* ✅ About page */}
+        <Route path="/about" element={<About />} />
+
+        {/* ✅ Services pages */}
         <Route path="/services/website-design" element={<WebsiteDesign />} />
         <Route path="/services/advanced-seo" element={<AdvancedSEO />} />
         <Route path="/services/logo-design" element={<LogoDesign />} />
         <Route path="/services/post-design" element={<PostDesign />} />
       </Routes>
-
       <Footer />
     </Router>
   );

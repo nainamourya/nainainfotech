@@ -220,7 +220,7 @@ export default function AdvancedSEO() {
               ref={imgRef}
               src="/img/seo.png"
               alt="SEO Dashboard"
-              className="w-full max-w-md rounded-3xl shadow-2xl border border-white/10"
+              className="w-full max-w-md "
             />
             <div className="absolute inset-0 -z-10 bg-indigo-500/20 blur-3xl rounded-full" />
           </div>
