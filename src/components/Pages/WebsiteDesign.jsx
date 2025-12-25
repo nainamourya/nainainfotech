@@ -150,7 +150,7 @@ export default function WebsiteDesign() {
               className="rounded-3xl shadow-2xl border border-white/10"
             />
             <img
-              src="/img/website2.png"
+              src="/img/website3.png"
               alt="Website UI"
               className="absolute -bottom-10 -right-10 w-2/3 rounded-3xl shadow-2xl border border-white/10"
             />

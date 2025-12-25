@@ -28,10 +28,18 @@ export default function Navbar() {
             to="/"
             className="flex items-center gap-2 text-xl font-extrabold tracking-tight"
           >
-            <Sparkles className="text-indigo-600" />
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              MindCraft
-            </span>
+            {/* <Sparkles className="text-indigo-600 w-6 h-6 md:w-7 md:h-7" /> */}
+
+            <img
+              src="/img/logo2-naina.png"
+              alt="Naina Infotech Logo"
+              className="
+      h-8 md:h-10 w-auto
+      object-contain
+      transition-transform duration-300
+      hover:scale-105
+    "
+            />
           </Link>
 
           {/* DESKTOP MENU */}
