@@ -4,25 +4,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
-
 const blogs = [
   {
-    title: "Modern Web Design That Converts",
-    desc: "Learn how clean UI, UX psychology, and performance-focused design can turn visitors into customers.",
+    title: "Modern Website Design That Converts Visitors",
+    desc: "Discover how clean UI, UX psychology, and conversion-focused layouts help businesses turn traffic into paying customers.",
     img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200",
     tag: "Web Design",
   },
   {
-    title: "SEO Strategies for 2025",
-    desc: "Master on-page SEO, Core Web Vitals, and content optimization to rank higher on Google.",
+    title: "SEO & Performance Strategies for 2025",
+    desc: "Learn how Core Web Vitals, on-page SEO, and fast-loading websites improve Google rankings and organic traffic.",
     img: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200",
-    tag: "SEO",
+    tag: "SEO & Marketing",
   },
   {
-    title: "Social Media That Builds Brands",
-    desc: "Discover how to grow your audience and drive traffic with smart content and engagement strategies.",
+    title: "Digital Marketing That Builds Strong Brands",
+    desc: "From social media strategy to content marketing, explore proven techniques to grow brand authority and online sales.",
     img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200",
-    tag: "Social Media",
+    tag: "Digital Marketing",
   },
 ];
 
@@ -75,11 +74,11 @@ export default function BlogSection() {
             <Sparkles size={16} /> Our Insights
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Stories to Heal, Learn & Grow
+            Insights on Web Design & Digital Growth
           </h2>
           <p className="mt-4 text-gray-600">
-            Explore thoughts, tools, and reflections to support your mental
-            wellness journey.
+            Actionable strategies, design thinking, and marketing insights to
+            help businesses attract, engage, and convert customers online.
           </p>
         </div>
 
@@ -126,7 +125,7 @@ export default function BlogSection() {
         {/* CTA */}
         <div className="mt-16 text-center">
           <button className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-700 hover:shadow-xl transition">
-            View All Articles <ArrowUpRight size={18} />
+            Explore All Insights <ArrowUpRight size={18} />
           </button>
         </div>
       </div>

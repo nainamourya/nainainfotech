@@ -15,6 +15,9 @@ import WebsiteDesign from "./components/Pages/WebsiteDesign";
 import AdvancedSEO from "./components/Pages/AdvancedSEO";
 import LogoDesign from "./components/Pages/LogoDesign";
 import PostDesign from "./components/Pages/PostDesign";
+import BlogPage from "./components/Pages/BlogPage";
+import BlogDetail from "./components/Pages/BlogDetail";
+import ContactPage from "./components/Pages/ContactPage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -40,6 +43,9 @@ function App() {
 
         {/* ✅ About page */}
         <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogDetail />} />
+        <Route path="/contact" element={<ContactPage />} />
 
         {/* ✅ Services pages */}
         <Route path="/services/website-design" element={<WebsiteDesign />} />

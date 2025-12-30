@@ -5,22 +5,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const services = [
   {
     title: "Website Design & Development",
-    desc: "Modern, responsive websites built with clean UI/UX to convert visitors into customers.",
+    desc: "High-converting, responsive websites built with modern UI/UX, fast performance, and scalable code.",
     img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800",
   },
   {
-    title: "SEO Optimization",
-    desc: "Rank higher on Google with on-page SEO, fast performance, and content that drives traffic.",
+    title: "SEO & Website Optimization",
+    desc: "Improve Google rankings with on-page SEO, Core Web Vitals optimization, and search-focused content strategy.",
     img: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800",
   },
   {
-    title: "Logo & Brand Identity",
-    desc: "Create a strong brand presence with unique logos and consistent visual identity.",
+    title: "Brand Identity & Logo Design",
+    desc: "Build a strong brand presence with memorable logos, consistent visuals, and premium brand identity systems.",
     img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800",
   },
   {
-    title: "Social Media Posts & Management",
-    desc: "Engaging social media designs and content to grow your audience and brand reach.",
+    title: "Social Media Design & Marketing",
+    desc: "Scroll-stopping creatives and content strategies designed to grow reach, engagement, and brand authority.",
     img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800",
   },
 ];
@@ -82,10 +82,13 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6">
         {/* HEADER */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+          <h2 className="text-4xl font-bold text-gray-900">
+            Services That Grow Your Digital Presence
+          </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Personalized therapy services designed to heal, grow, and empower
-            your mind.
+            We help businesses attract, engage, and convert customers through
+            high-performance websites and result-driven digital marketing
+            solutions.
           </p>
         </div>
 

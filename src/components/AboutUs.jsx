@@ -1,97 +1,167 @@
-import { useEffect, useState } from "react";
-import { Sparkles, Target, Heart } from "lucide-react";
-import React from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { useEffect, useState, useRef } from "react";
+import { Sparkles, Target, Heart, Code2, Layers } from "lucide-react";
+import { gsap } from "gsap";
 
-const images = [
-  "/img/abt5.png", // 👈 add your vector PNG paths
-  "/img/abt2.png",
-  "/img/abt6.png",
-];
+const images = ["/img/abt5.png", "/img/abt2.png", "/img/abt6.png"];
 
 export default function AboutUs() {
   const [index, setIndex] = useState(0);
+  const floatRefs = useRef([]);
 
+  // Image slider
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 3000); // ⏱ 3 sec
-
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <section className="relative py-24 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* 🖼 IMAGE SLIDER */}
-        <div className="relative flex justify-center">
-          <div className="relative w-[280px] sm:w-[360px] md:w-[420px]">
-            <img
-              src={images[index]}
-              alt="About illustration"
-              className="w-full h-auto transition-all duration-700 ease-in-out drop-shadow-2xl"
-            />
+  // Floating icon animation
+  useEffect(() => {
+    floatRefs.current.forEach((el, i) => {
+      if (!el) return;
 
-            {/* Glow */}
-            <div className="absolute -inset-6 bg-indigo-400/20 blur-3xl rounded-full -z-10"></div>
-          </div>
+      gsap.to(el, {
+        y: i % 2 === 0 ? -50 : 50,
+        x: i % 3 === 0 ? 40 : -40,
+        rotation: i % 2 === 0 ? 6 : -6,
+        duration: 8 + i,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+    });
+  }, []);
+
+  return (
+    <>
+      {/* ABOUT SECTION */}
+      <section className="relative py-28 bg-gradient-to-b from-white to-indigo-50 overflow-hidden font-[Inter]">
+        {/* FLOATING BACKGROUND ICONS */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <Sparkles
+            ref={(el) => (floatRefs.current[0] = el)}
+            className="absolute top-24 left-20 w-16 h-16 text-indigo-500 opacity-20"
+          />
+
+          <Code2
+            ref={(el) => (floatRefs.current[1] = el)}
+            className="absolute top-1/3 right-24 w-20 h-20 text-indigo-600 opacity-25"
+          />
+
+          <Layers
+            ref={(el) => (floatRefs.current[2] = el)}
+            className="absolute bottom-32 left-32 w-16 h-16 text-indigo-500 opacity-20"
+          />
+
+          <Target
+            ref={(el) => (floatRefs.current[3] = el)}
+            className="absolute bottom-24 right-40 w-14 h-14 text-indigo-400 opacity-20"
+          />
+
+          {/* <Heart
+            ref={(el) => (floatRefs.current[4] = el)}
+            className="absolute top-1/2 left-1/2 w-12 h-12 text-indigo-400 opacity-15"
+          /> */}
         </div>
 
-        {/* 📄 CONTENT */}
-        <div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
-            About <span className="text-indigo-600">Us</span>
-          </h2>
+        <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center z-10">
+          {/* IMAGE SLIDER */}
+          <div className="relative flex justify-center">
+            <div className="relative w-[300px] sm:w-[380px] md:w-[440px]">
+              <img
+                src={images[index]}
+                alt="About illustration"
+                className="w-full h-auto transition-all duration-700 ease-in-out drop-shadow-2xl"
+              />
+              <div className="absolute -inset-6 bg-indigo-400/30 blur-3xl rounded-full -z-10" />
+            </div>
+          </div>
 
-          <p className="mt-6 text-lg text-gray-600 leading-relaxed max-w-xl">
-            We are passionate creators crafting modern web experiences that
-            blend beautiful design with powerful technology. Our goal is to help
-            brands grow, connect, and stand out in the digital world.
+          {/* CONTENT */}
+          <div>
+            <p className="text-xs uppercase tracking-[0.35em] text-indigo-600 font-semibold">
+              About Us
+            </p>
+
+            <h2 className="mt-6 text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+              We build modern digital
+              <br /> experiences that convert.
+            </h2>
+
+            <p className="mt-6 text-lg text-gray-600 leading-relaxed max-w-xl">
+              We help brands grow through clean design, powerful technology, and
+              thoughtful user experiences.
+            </p>
+
+            {/* FEATURES */}
+            <div className="mt-12 space-y-6">
+              <Feature
+                icon={<Sparkles />}
+                title="Creative Design"
+                text="Minimal, modern and conversion-focused UI."
+              />
+              <Feature
+                icon={<Target />}
+                title="Clear Strategy"
+                text="Every decision supports business goals."
+              />
+              <Feature
+                icon={<Heart />}
+                title="Built with Care"
+                text="Attention to detail in every project."
+              />
+            </div>
+
+            {/* CTA */}
+            <button className="mt-12 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition shadow-lg">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDY STRIP */}
+      <section className="bg-white py-24 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-[0.35em] text-indigo-600 mb-10">
+            Selected Work
           </p>
 
-          {/* 🌟 FEATURES */}
-          <div className="mt-10 space-y-6">
-            <Feature
-              icon={<Sparkles />}
-              title="Creative Design"
-              text="Clean, modern, and user-focused UI that feels premium."
-            />
-            <Feature
-              icon={<Target />}
-              title="Our Mission"
-              text="Deliver impactful digital products that drive results."
-            />
-            <Feature
-              icon={<Heart />}
-              title="Built with Passion"
-              text="We love what we do and it reflects in every project."
-            />
+          <div className="grid md:grid-cols-3 gap-14">
+            {[
+              {
+                title: "Luxury Restaurant Brand",
+                result: "+68% Online Orders",
+              },
+              {
+                title: "Startup SaaS Platform",
+                result: "3× Conversion Rate",
+              },
+              {
+                title: "E-commerce Fashion Brand",
+                result: "+42% Revenue Growth",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="group hover:translate-y-[-6px] transition"
+              >
+                <div className="h-[2px] w-10 bg-indigo-600 mb-4 group-hover:w-16 transition-all" />
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-gray-600">{item.result}</p>
+              </div>
+            ))}
           </div>
-
-          {/* 🔘 CTA */}
-          <button className="mt-10 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition shadow-lg">
-            Learn More
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </button>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
-/* 🔹 Feature Item */
+/* FEATURE ITEM */
 const Feature = ({ icon, title, text }) => (
   <div className="flex items-start gap-4">
     <div className="p-3 rounded-xl bg-indigo-100 text-indigo-600">{icon}</div>
