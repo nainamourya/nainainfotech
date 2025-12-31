@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.nainainfotech.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nainainfotech.com/about</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nainainfotech.com/services/website-design</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nainainfotech.com/services/advanced-seo</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nainainfotech.com/services/logo-design</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nainainfotech.com/services/post-design</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nainainfotech.com/blog</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nainainfotech.com/contact</loc>
+    <priority>0.70</priority>
+  </url>
+
+</urlset>
