@@ -112,7 +112,16 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="text-lg font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
             >
-              MindCraft
+              <img
+                src="/img/logo2-naina.png"
+                alt="Naina Infotech Logo"
+                className="
+      h-8 md:h-10 w-auto
+      object-contain
+      transition-transform duration-300
+      hover:scale-105
+    "
+              />
             </Link>
             <button onClick={() => setOpen(false)}>
               <X size={28} />
