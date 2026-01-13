@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -128,9 +129,11 @@ export default function Services() {
                       {s.title}
                     </h3>
                     <p className="mt-2 text-gray-600">{s.desc}</p>
-                    <button className="mt-4 text-indigo-600 font-semibold hover:underline">
-                      Learn More →
-                    </button>
+                    <Link to="/contact">
+                      <button className="mt-4 text-indigo-600 font-semibold hover:underline">
+                        GET NOW →
+                      </button>
+                    </Link>
                   </div>
                 </div>
               ))}

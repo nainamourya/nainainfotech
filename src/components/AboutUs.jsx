@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Sparkles, Target, Heart, Code2, Layers } from "lucide-react";
 import { gsap } from "gsap";
-
+import { Link } from "react-router-dom";
 const images = ["/img/abt5.png", "/img/abt2.png", "/img/abt6.png"];
 
 export default function AboutUs() {
@@ -109,9 +109,11 @@ export default function AboutUs() {
             </div>
 
             {/* CTA */}
-            <button className="mt-12 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-indigo-600 text-white font-heading font-semibold hover:bg-indigo-700 transition shadow-lg">
-              Learn More
-            </button>
+            <Link to="/about">
+              <button className="mt-12 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-indigo-600 text-white font-heading font-semibold hover:bg-indigo-700 transition shadow-lg">
+                Learn More
+              </button>
+            </Link>
           </div>
         </div>
       </section>

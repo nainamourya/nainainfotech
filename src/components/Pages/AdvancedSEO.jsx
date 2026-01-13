@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+
 import {
   Search,
   TrendingUp,
@@ -30,14 +33,14 @@ export default function AdvancedSEO() {
       // 🔹 Hero animations
       gsap.from(".seo-title", {
         y: 60,
-        opacity: 0,
+        // opacity: 0,
         duration: 1,
         scrollTrigger: { trigger: heroRef.current, start: "top 80%" },
       });
 
       gsap.from(cardsRef.current, {
         y: 80,
-        opacity: 0,
+        // opacity: 0,
         stagger: 0.2,
         duration: 1,
         scrollTrigger: { trigger: heroRef.current, start: "top 70%" },
@@ -45,10 +48,10 @@ export default function AdvancedSEO() {
 
       gsap.fromTo(
         imgRef.current,
-        { y: 60, opacity: 0, scale: 0.9 },
+        { y: 60, scale: 0.9 },
         {
           y: 0,
-          opacity: 1,
+          // opacity: 1,
           scale: 1,
           duration: 1.2,
           scrollTrigger: { trigger: imgRef.current, start: "top 80%" },
@@ -83,7 +86,7 @@ export default function AdvancedSEO() {
       // 🔹 Stats
       gsap.from(".seo-stat", {
         y: 40,
-        opacity: 0,
+        // opacity: 0,
         stagger: 0.2,
         duration: 1,
         scrollTrigger: { trigger: statsRef.current, start: "top 80%" },
@@ -92,7 +95,7 @@ export default function AdvancedSEO() {
       // 🔹 CTA
       gsap.from(ctaRef.current, {
         scale: 0.9,
-        opacity: 0,
+        // opacity: 0,
         duration: 1,
         scrollTrigger: { trigger: ctaRef.current, start: "top 85%" },
       });
@@ -156,6 +159,19 @@ export default function AdvancedSEO() {
 
   return (
     <>
+      <Helmet>
+        <title>
+          Advanced SEO Services in India | Rank Higher & Grow – Naina Infotech
+        </title>
+        <meta
+          name="description"
+          content="Naina Infotech provides advanced SEO services that increase rankings, traffic, and conversions. Data-driven SEO for long-term business growth."
+        />
+        <link
+          rel="canonical"
+          href="https://www.nainainfotech.com/services/advanced-seo"
+        />
+      </Helmet>
       {/* ================= HERO SECTION ================= */}
       <section
         ref={heroRef}
@@ -183,23 +199,23 @@ export default function AdvancedSEO() {
           </defs>
         </svg>
 
-        <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h2 className="seo-title text-5xl md:text-6xl font-extrabold text-white">
-              Advanced <span className="text-indigo-400">SEO</span> That Drives
-              Growth
-            </h2>
+            <h1 className="seo-title text-5xl md:text-6xl font-extrabold text-white">
+              Advanced <span className="text-indigo-400">SEO</span> That Builds
+              <br />
+              Long-Term Digital Authority
+            </h1>
             <p className="mt-6 text-lg text-zinc-400 max-w-xl">
               Intelligent SEO strategies to boost visibility, traffic, and
               conversions.
             </p>
-
-            <div className="mt-12 grid sm:grid-cols-2 gap-6">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
               {features.map((item, i) => (
                 <div
                   key={i}
                   ref={(el) => (cardsRef.current[i] = el)}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur hover:border-indigo-500/40 transition"
+                  className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur hover:border-indigo-500/40 transition h-full flex flex-col"
                 >
                   <div className="flex items-center gap-4">
                     <div className="p-3 rounded-xl bg-indigo-500/20 text-indigo-400">
@@ -265,7 +281,34 @@ export default function AdvancedSEO() {
           ))}
         </div>
       </section>
+      {/* SEO CONTENT */}
+      <section className="py-20 bg-zinc-900 text-zinc-300">
+        <div className="max-w-4xl mx-auto px-6 space-y-6 text-sm leading-relaxed">
+          <h2 className="text-2xl font-semibold text-white">
+            Advanced SEO Services for Sustainable Growth
+          </h2>
 
+          <p>
+            Naina Infotech delivers performance-driven SEO services designed to
+            help businesses rank higher, attract qualified traffic, and convert
+            visitors into customers. Our advanced SEO framework combines
+            technical optimization, content strategy, and authority building.
+          </p>
+
+          <p>
+            We don’t chase shortcuts. Our SEO process focuses on long-term
+            visibility, search intent alignment, and measurable business
+            outcomes. Every campaign is built around data, user behavior, and
+            Google’s evolving algorithms.
+          </p>
+
+          <p>
+            Whether you’re a startup, local business, or growing brand, our SEO
+            strategies are tailored to your industry, competition, and
+            goals—ensuring consistent growth over time.
+          </p>
+        </div>
+      </section>
       {/* ================= CTA SECTION ================= */}
       <section className="py-28 bg-zinc-950 text-white text-center">
         <div
@@ -280,9 +323,11 @@ export default function AdvancedSEO() {
             business.
           </p>
 
-          <button className="mt-10 inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-700 transition px-8 py-4 rounded-xl font-semibold">
-            Get Free SEO Audit <ArrowRight />
-          </button>
+          <Link to="/contact">
+            <button className="mt-10 inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-700 transition px-8 py-4 rounded-xl font-semibold">
+              Get Free SEO Audit <ArrowRight />
+            </button>
+          </Link>
         </div>
       </section>
     </>

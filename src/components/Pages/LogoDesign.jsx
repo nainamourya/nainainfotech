@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Brush, Sparkles, PenTool, Shapes, ArrowRight } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 export default function LogoDesign() {
   const sectionRef = useRef(null);
@@ -25,7 +27,6 @@ export default function LogoDesign() {
 
       gsap.from(cardsRef.current, {
         y: 80,
-        // opacity: 0,
         stagger: 0.2,
         duration: 1,
         ease: "power3.out",
@@ -72,6 +73,19 @@ export default function LogoDesign() {
       ref={sectionRef}
       className="relative py-28 bg-gradient-to-br from-slate-950 via-indigo-950 to-black text-white overflow-hidden"
     >
+      {/* SEO */}
+      <Helmet>
+        <title>Logo Design Services | Naina Infotech</title>
+        <meta
+          name="description"
+          content="Professional logo design services by Naina Infotech. We create bold, modern, and memorable logos that build trust and brand recognition."
+        />
+        <link
+          rel="canonical"
+          href="https://www.nainainfotech.com/services/logo-design"
+        />
+      </Helmet>
+
       {/* 🔮 Floating SVG Background */}
       <svg
         className="float-svg absolute top-10 left-10 w-72 h-72 opacity-30 blur-2xl"
@@ -96,9 +110,11 @@ export default function LogoDesign() {
           and elevate your business.
         </p>
 
-        <button className="mt-10 inline-flex items-center gap-3 px-8 py-4 rounded-full bg-indigo-600 hover:bg-indigo-500 transition text-white font-semibold shadow-lg">
-          Get Started <ArrowRight className="w-5 h-5" />
-        </button>
+        <Link to="/contact">
+          <button className="mt-10 inline-flex items-center gap-3 px-8 py-4 rounded-full bg-indigo-600 hover:bg-indigo-500 transition text-white font-semibold shadow-lg">
+            Get Started <ArrowRight className="w-5 h-5" />
+          </button>
+        </Link>
 
         {/* 🧩 Icon Cards */}
         <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -117,6 +133,108 @@ export default function LogoDesign() {
               </p>
             </div>
           ))}
+        </div>
+      </div>
+      {/* 📄 SEO CONTENT */}
+      <div className="mt-42 max-w-4xl mx-auto text-left text-gray-300 leading-relaxed space-y-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-white">
+          Professional Logo Design Services in India
+        </h2>
+
+        <p>
+          At Naina Infotech, we provide professional logo design services for
+          startups, small businesses, and growing brands. A logo is more than a
+          symbol — it is the visual foundation of your brand identity. It
+          represents your values, personality, and promise to your customers.
+        </p>
+
+        <p>
+          Our logo design process focuses on clarity, meaning, and long-term
+          relevance. We do not rely on templates or trends that fade quickly.
+          Every logo is crafted from scratch with strategy, research, and visual
+          precision to ensure it works across websites, social media, packaging,
+          and marketing materials.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-white">
+          Why a Strategic Logo Matters
+        </h3>
+
+        <p>
+          A strong logo builds trust, recognition, and credibility. It helps
+          customers remember your brand and creates emotional connection.
+          Businesses with a clear visual identity are more likely to attract
+          high-quality clients and stand out in competitive markets.
+        </p>
+
+        <ul className="list-disc pl-6 space-y-2">
+          <li>Custom logo concepts aligned with your brand goals</li>
+          <li>Scalable designs for web, print, and social media</li>
+          <li>Timeless visual systems that grow with your business</li>
+          <li>Professional typography and color strategy</li>
+          <li>Brand-ready files for all platforms</li>
+        </ul>
+
+        <h3 className="text-2xl font-semibold text-white">
+          Logo Design for Startups & Businesses
+        </h3>
+
+        <p>
+          Whether you are launching a new startup, rebranding an existing
+          business, or refining your visual identity, our logo design services
+          are built to support long-term growth. We help brands look confident,
+          professional, and memorable from day one.
+        </p>
+
+        <p>
+          If you want a logo that communicates value, builds trust, and
+          positions your business as premium, Naina Infotech is your creative
+          partner.
+        </p>
+      </div>
+      {/* 🎯 FINAL CTA */}
+      <div className="mt-40 relative overflow-hidden">
+        {/* glow */}
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 blur-3xl" />
+
+        <div className="relative max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl">
+          {/* LEFT CONTENT */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+              Ready to build a
+              <br />
+              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                powerful brand identity?
+              </span>
+            </h2>
+
+            <p className="mt-6 text-lg text-gray-300 max-w-xl">
+              Your logo is the first impression of your business. Let’s craft a
+              professional, memorable identity that earns trust and recognition
+              from day one.
+            </p>
+
+            <Link to="/contact">
+              <button className="mt-10 inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:scale-105 transition text-white font-semibold shadow-xl">
+                Start Your Brand <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
+          </div>
+
+          {/* RIGHT VISUAL */}
+          <div className="relative">
+            <img
+              src="https://i.pinimg.com/1200x/52/aa/81/52aa81993331855f2485d5f43120de05.jpg"
+              alt="Brand identity and logo design"
+              className="rounded-3xl shadow-2xl border border-white/10 w-full"
+            />
+            {/* <img
+              src="img/footer-logo.png"
+              alt="Logo design preview"
+              className="rounded-3xl shadow-2xl border border-white/10"
+            /> */}
+            <div className="absolute -inset-6 bg-purple-500/20 blur-3xl -z-10 rounded-3xl" />
+          </div>
         </div>
       </div>
     </section>

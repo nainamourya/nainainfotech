@@ -9,9 +9,10 @@ import Services from "./components/Services";
 import CTASection from "./components/CTASection";
 import BlogSection from "./components/BlogSection";
 import About from "./components/Pages/About";
-import WhatsAppButton from "./components/WhatsAppButton"; // ✅ ADD THIS
+import WhatsAppButton from "./components/WhatsAppButton";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 import WebsiteDesign from "./components/Pages/WebsiteDesign";
 import AdvancedSEO from "./components/Pages/AdvancedSEO";
@@ -35,6 +36,17 @@ function App() {
           path="/"
           element={
             <>
+              <Helmet>
+                <title>
+                  Naina Infotech – Web Design, SEO & Digital Solutions
+                </title>
+                <meta
+                  name="description"
+                  content="Naina Infotech provides professional website design, SEO, and digital solutions to help businesses grow online with clarity and performance."
+                />
+                <link rel="canonical" href="https://www.nainainfotech.com/" />
+              </Helmet>
+
               <Hero />
               <AboutUs />
               <Services />

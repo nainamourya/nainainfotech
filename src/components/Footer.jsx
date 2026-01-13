@@ -65,7 +65,7 @@ export default function Footer() {
         <div className="footer-item space-y-4">
           <div className="flex items-center gap-2 text-white text-2xl font-bold">
             <img
-              src="img/footer-logo.png"
+              src="/img/footer-logo.png"
               alt="nainainfotech Logo"
               className="h-10 w-auto object-contain"
             />
